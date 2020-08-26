@@ -1,5 +1,5 @@
 const tenantInfo = {
   tenantId:'UTADemo',
-  env:'dev',
+  env:'stage',
   senderId:'1012473507211'
 }
