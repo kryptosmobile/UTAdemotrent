@@ -55,7 +55,9 @@
   <!--<preference name="AndroidExtraFilesystems" value="files,cache, sdcard, cache-external, files-external" />-->
 
   <preference name="SplashMaintainAspectRatio" value="true"/>
-  <engine name="ios" spec="latest"/>
+  <!--<engine name="ios" spec="latest"/>-->
+  <engine name="ios" spec="latest" />
+  <engine name="android" spec="latest" />
 
   <!--<icon src="icon.png"/>-->
   <platform name="android">
