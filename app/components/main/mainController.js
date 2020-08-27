@@ -228,9 +228,9 @@ mainCtrl.controller('mainController', ['$rootScope', '$scope', '$routeParams', '
     if ($.jStorage.get("unifyedusername") && $.jStorage.get("unifyedpassword")) {
       let token = $.jStorage.get("token");
       $rootScope.loggedIn = true;
-      $rootScope.user['accessToken'] = token.access_token;
-      $rootScope.user['refreshToken'] = token.refresh_token;
-      $rootScope.user['providerData'] = token.access_token;
+      $rootScope.user['accessToken'] = token.accessToken;
+      $rootScope.user['refreshToken'] = token.refreshToken;
+      $rootScope.user['providerData'] = token.accessToken;
       $rootScope.loadUserRbac = true;
       callBack(null);
     } else if ($rootScope.appDetails.guestApp) {
