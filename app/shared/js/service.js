@@ -543,45 +543,7 @@ angular.module('MobileServices', []).factory('unifyedglobal', ['$http', '$rootSc
     }
 
     $rootScope.refreshToken = function(url, method, apidata, callback) {
-        $.blockUI();
-        var refreshUrl = $rootScope.GatewayUrl + "/unifydidentity/open/oauth2/token";
-        //var data = "refresh_token=" + $rootScope.user.refreshToken;
-        var data = 'username=' + $.jStorage.get("unifyedusername") + '&password=' + $.jStorage.get("unifyedpassword");
-        var req = {
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'X-TENANT-ID': $rootScope.tenantId
-            },
-            url: refreshUrl,
-            method: 'POST',
-            data: data,
-            json: true
-        }
-        $http(req).then(function successCallback(res) {
-            var data = res.data;
-            console.log('beforeRefresh', $rootScope.user);
-            $rootScope.user['accessToken'] = data.access_token;
-            $rootScope.user['refreshToken'] = data.refresh_token;
-            $rootScope.user['providerData'] = data.access_token;
-            console.log('afterRefresh', $rootScope.user);
-            $.jStorage.set('user', $rootScope.user);
-            $.jStorage.set('token', res.data);
-            $rootScope.callAPI(url, method, apidata, callback);
-            $.unblockUI();
-        }, function errorCallback(err) {
-            console.log(err);
-            $.unblockUI();
-            if (window.device) {
-                navigator.notification.alert('Your session is expired. Please login again.', null, 'Session Expired', 'Ok');
-            } else {
-                alert('Your session is expired. Please login again.');
-            }
-            $.jStorage.deleteKey("user");
-            $.jStorage.deleteKey("token");
-            $.jStorage.deleteKey("unifyedusername");
-            $.jStorage.deleteKey("unifyedpassword");
-            $rootScope.refreshHandler();
-        });
+        window.refreshLogin();
     };
 
     $rootScope.callOpenAPI = function(option, cb) {
