@@ -104,7 +104,7 @@
         <ul>
           <div class="dockIconLeft">
           <li class="footerIcon" ng-repeat='app in $root.dockApplets | limitTo : 2'>
-            <a class="dockIconLink dockIcon{{app.id}}" ng-href='#{{app.url}}'>
+            <a class="dockIconLink dockIcon{{app.id}}" ng-click="openDocUrl(app)">
               <span class="dockIconImage" ng-class="!app.url?'lightBgColor borderRadius4px':''">
                 <img class="dock-menu-icon" ng-src="{{app.image}}" />
                 <span class="badge dockBadgeIcon"  ng-if="app.url == '/app/Notification290/Notification290' && notificationcentre && notificationcentre.badge" id="notificationBubble">
@@ -126,7 +126,7 @@
           </li>
           <div class="dockIconRight">
           <li class="footerIcon" ng-if="$index == 2 || $index == 3" ng-repeat='app in $root.dockApplets'>
-            <a class="dockIconLink dockIcon{{app.id}}" ng-href='#{{app.url}}'>
+            <a class="dockIconLink dockIcon{{app.id}}" ng-click="openDocUrl(app)">
               <span class="dockIconImage" ng-class="!app.url?'lightBgColor borderRadius4px':''">
                 <img class="dock-menu-icon" ng-src="{{app.image}}" />
                  <span class="badge dockBadgeIcon" ng-if="app.url == '/app/Notification290/Notification290' && notificationcentre && notificationcentre.badge" id="notificationBubble">
