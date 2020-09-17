@@ -972,6 +972,15 @@ angular.module('MobileServices', []).factory('unifyedglobal', ['$http', '$rootSc
         }
     }
 
+      $rootScope.openDocUrl = function(app){
+    console.log(app,'checking app')
+    if (app.type == 'link') {
+      window.open(app.url, '_blank');
+    } else {
+      $location.path(app.url);
+    }
+}
+
     /* Dont remove this code */
     return {
         'serviceloaded': 'serviceloaded'
