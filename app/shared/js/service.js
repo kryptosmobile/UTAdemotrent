@@ -639,6 +639,40 @@ angular.module('MobileServices', []).factory('unifyedglobal', ['$http', '$rootSc
         });
     }
 
+    $rootScope.logPageAccessMobile = function (tenant, appid, appname, pageid,callBack) {
+    try {
+        console.log('logPageAccessMobile****', window.siteGroupId)
+        console.log((window.siteGroupId && window.siteGroupId.length > 0) ? window.siteGroupId + '/' + appname : appname)
+        var reqBody = {
+            "user": $rootScope.username,
+            "activity": {
+                "appid": (window.siteGroupId && window.siteGroupId.length > 0) ? window.siteGroupId: appid,
+                "appname": (window.siteGroupId && window.siteGroupId.length > 0) ? window.siteGroupId : appname ,
+                "pageid": (window.siteGroupId && window.siteGroupId.length > 0) ? window.siteGroupId : pageid
+            }, "device": {
+                "model": window.device.model,
+                "cordova": window.device.cordova,
+                "platform": window.device.platform,
+                "uuid": window.device.uuid,
+                "version": window.device.version,
+                "name": window.device.name
+            }
+        }
+        var url = '/unifydplatform/open/analytics/logpageaccess/' + tenant + "?callback=JSON_CALLBACK";
+        $rootScope.callAPI(url, 'POST', reqBody, function (res) {
+            var data = (res && res.data) ? res.data : {};
+           
+            return callBack();
+        });
+      //  console.log(window.siteGroupId);
+       // console.log('window.siteGroupId ? window.siteGroupId + pageid : pageid', window.siteGroupId ? window.siteGroupId + pageid : pageid);
+    } catch (e) {
+        //Ignore
+        console.log('Error',e);
+        return callBack();
+    }
+}
+
 
     $rootScope.$on("$routeChangeStart", function(event, next, current) {
         $.blockUI();
@@ -688,6 +722,31 @@ angular.module('MobileServices', []).factory('unifyedglobal', ['$http', '$rootSc
     }
     $rootScope.$on("$routeChangeSuccess", function(event, next, current) {
         $.unblockUI();
+        var appid = "", pageid = "", appname = "";
+    if (next.params.id) {
+        //cms routes
+        appid = next.params.id;
+        pageid = appid;
+        appname = appid;
+        //appname = $rootScope.appletTitle
+    } else if (next.params.appid) {
+        appid = next.params.appid;
+        pageid = next.params.pageid;
+        var currentapp = _.find($rootScope.applets, function (app) { return app.name == appid });
+        appname = (currentapp) ? currentapp.displayname : appid;
+    }
+    console.log('/////////////APP ID///////////////');
+   
+    if((!(next.pathParams.appid =='Rbacmenu'||next.pathParams.appid =='Rbacsignin' || next.pathParams.appid == 'Rbacsetting' ||next.pathParams.appid =='RbacsettingPage9' || next.pathParams.appid == undefined)) || _.get(next, 'pathParams.id', '')){
+        setTimeout(function () {
+          console.log('Analytics....');
+          
+          $rootScope.logPageAccessMobile($rootScope.tenantId, appid, appname, pageid, function () {
+          //   $rootScope.logPageAccess($rootScope.tenantId, $rootScope.appletTitle, $rootScope.appletTitle, $rootScope.appletTitle, function () { 
+          // Tracking info sent to analytics
+          });
+        }, 1200);
+    }
         $(".dockIconLink .dockIconImage").children('.dock-menu-icon').css('opacity', 0.6);
         $(".dockIconLink .dockIconLabel").css('opacity', 0.6);
         if ($rootScope.dockApplets) {
