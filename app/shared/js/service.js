@@ -741,8 +741,9 @@ angular.module('MobileServices', []).factory('unifyedglobal', ['$http', '$rootSc
         setTimeout(function () {
           console.log('Analytics....');
           
-          $rootScope.logPageAccessMobile($rootScope.tenantId, appid, appname, pageid, function () {
-          //   $rootScope.logPageAccess($rootScope.tenantId, $rootScope.appletTitle, $rootScope.appletTitle, $rootScope.appletTitle, function () { 
+         // $rootScope.logPageAccessMobile($rootScope.tenantId, appid, appname, pageid, function () {
+   $rootScope.logPageAccessMobile($rootScope.tenantId, $rootScope.appletTitle, $rootScope.appletTitle, $rootScope.appletTitle, function () {
+            //   $rootScope.logPageAccess($rootScope.tenantId, $rootScope.appletTitle, $rootScope.appletTitle, $rootScope.appletTitle, function () { 
           // Tracking info sent to analytics
           });
         }, 1200);
