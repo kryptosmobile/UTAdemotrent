@@ -6,7 +6,7 @@
   <author href="http://unifyedmobile.com" email="info@kryptosmobile.com">unifyed 8</author>
   <feature name="http://api.phonegap.com/1.0/device"/>
 
-  <preference name='phonegap-version' value='cli-7.1.0'/>
+  <preference name='phonegap-version' value='cli-9.0.0'/>
   <preference name="permissions" value="none"/>
   <preference name="orientation" value="portrait"/>
   <!-- all: default means both landscape and portrait are enabled -->
@@ -155,7 +155,7 @@
   </gap:plugin>
 
   <platform name="android">
-    <resource-file src="google-services.json" target="/google-services.json"/>
+    <resource-file src="google-services.json" target="/app/google-services.json"/>
   </platform>
 
   <gap:plugin name="cordova-plugin-ionic-keyboard" source="npm" spec="2.0.5"/>
