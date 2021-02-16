@@ -129,9 +129,10 @@
   <plugin name="cordova-plugin-geolocation" spec="~4">
     <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="This app uses your location for maps."/>
   </plugin>
+    <plugin name="cordova-plugin-wkwebview-engine" />
   <!--<gap:plugin name="cordova-plugin-geolocation" source="npm" />-->
- <!-- <gap:plugin name="cordova-plugin-inappbrowser" source="npm" spec="3.2.0"/>-->
-    <plugin name="cordova-plugin-inappbrowser" spec="https://github.com/apache/cordova-plugin-inappbrowser" />
+  <gap:plugin name="cordova-plugin-inappbrowser" source="npm" spec="3.2.0"/>
+ <!--   <plugin name="cordova-plugin-inappbrowser" spec="https://github.com/apache/cordova-plugin-inappbrowser" />-->
   <gap:plugin name="cordova-plugin-network-information" source="npm"/>
   <gap:plugin name="cordova-plugin-splashscreen" source="npm"/>
   <gap:plugin name="cordova-plugin-statusbar" source="npm"/>
