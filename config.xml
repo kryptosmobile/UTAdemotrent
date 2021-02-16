@@ -6,8 +6,10 @@
   <author href="http://unifyedmobile.com" email="info@kryptosmobile.com">unifyed 8</author>
   <feature name="http://api.phonegap.com/1.0/device"/>
 
-  <preference name='phonegap-version' value='cli-8.0.0'/>
-    <preference name='pgb-builder-version' value='2'/>	
+ <preference name='phonegap-version' value='cli-8.0.0'/>
+  <preference name='pgb-builder-version' value='2'/>
+
+
   <preference name="permissions" value="none"/>
   <preference name="orientation" value="portrait"/>
   <!-- all: default means both landscape and portrait are enabled -->
@@ -35,31 +37,27 @@
   <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
   <preference name="android-minSdkVersion" value="22"/>
   <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
-  <preference name="android-targetSdkVersion" value="29"/>
+  <preference name="android-targetSdkVersion" value="29" />
 
   <preference name="android-installLocation" value="auto"/>
   <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
-  <preference name="SplashScreenDelay" value="4800"/>
-  <preference name="ShowSplashScreenSpinner" value="yes"/>
-  <preference name="SplashScreenSpinnerColor" value="green"/>
+ <preference name="SplashScreenDelay" value="4800" />
+ <preference name="ShowSplashScreenSpinner" value="yes"/>
+ <preference name="SplashScreenSpinnerColor" value="green" />
   <preference name="StatusBarOverlaysWebView" value="false"/>
   <preference name="StatusBarBackgroundColor" value="#000000"/>
   <preference name="StatusBarStyle" value="lightcontent"/>
   <preference name="KeyboardDisplayRequiresUserAction" value="false"/>
-  <preference name="KeyboardResize" value="true"/>
-  <preference name="KeyboardResizeMode" value="native"/>
-  <preference name="KeyboardShrinksView" value="true"/>
-  <preference name="HideKeyboardFormAccessoryBar" value="false"/>
+  <preference name="KeyboardResize" value="true" />
+  <preference name="KeyboardShrinksView" value="true" />
+  <preference name="HideKeyboardFormAccessoryBar" value="false" />
   <preference name="DisallowOverscroll" value="true"/>
-  <preference name="UIWebViewBounce" value="false"/>
-  <preference name="iosPersistentFileLocation" value="Library"/>
-  <!--<preference name="AndroidExtraFilesystems" value="files,cache, sdcard, cache-external, files-external" />-->
-   <preference name="AndroidPersistentFileLocation" value="Internal" />	
-  <preference name="SplashMaintainAspectRatio" value="true"/>
-  <!--<engine name="ios" spec="latest"/>-->
-  <engine name="ios" spec="latest" />
-  <preference name="android-build-tool" value="gradle" />	
-  <engine name="android" spec="latest" />
+  <preference name="UIWebViewBounce" value="false" />
+  <preference name="iosPersistentFileLocation" value="Library" />
+  <preference name="AndroidPersistentFileLocation" value="Internal" />
+  <preference name="SplashMaintainAspectRatio" value="true" />
+<preference name="android-build-tool" value="gradle" />
+  <engine name="ios" spec="latest"/>
 
   <!--<icon src="icon.png"/>-->
   <platform name="android">
@@ -76,11 +74,7 @@
     <splash src="res/screen/android/screen-xhdpi-portrait.png" density="xxhdpi"/>
     <splash src="res/screen/android/screen-xhdpi-portrait.png" density="xxxhdpi"/>
 
-    <resource-file src="res/icon/android/icon.png" target="app/src/main/res/drawable-mdpi/icon.png"/>
-    <resource-file src="res/icon/android/icon.png" target="app/src/main/res/drawable-hdpi/icon.png"/>
-    <resource-file src="res/icon/android/icon.png" target="app/src/main/res/drawable-xhdpi/icon.png"/>
-    <resource-file src="res/icon/android/icon.png" target="app/src/main/res/drawable-xxhdpi/icon.png"/>
-    <resource-file src="res/icon/android/icon.png" target="app/src/main/res/drawable-xxxhdpi/icon.png"/>
+    
   </platform>
   <platform name="ios">
     <icon height="29" src="res/icon/ios/icon-small.png" width="29"/>
@@ -101,7 +95,7 @@
     <icon height="76" src="res/icon/ios/icon-76.png" width="76"/>
     <icon height="152" src="res/icon/ios/icon-76-2x.png" width="152"/>
     <icon height="167" src="res/icon/ios/icon-83.5-2x.png" width="167"/>
-    <icon src="icon/ios/icon.png" width="1024" height="1024"/>
+    <icon src="icon/ios/icon.png" width="1024" height="1024" />
 
     <splash src="res/screen/ios/Default@2x~iphone~anyany.png"/>
 
@@ -136,9 +130,8 @@
     <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="This app uses your location for maps."/>
   </plugin>
   <!--<gap:plugin name="cordova-plugin-geolocation" source="npm" />-->
-  <!--<gap:plugin name="cordova-plugin-inappbrowser" source="npm"/>-->
-  <plugin name="cordova-plugin-wkwebview-engine" />
-  <plugin name="cordova-plugin-inappbrowser" spec="https://github.com/apache/cordova-plugin-inappbrowser" />
+ <!-- <gap:plugin name="cordova-plugin-inappbrowser" source="npm" spec="3.2.0"/>-->
+    <plugin name="cordova-plugin-inappbrowser" spec="https://github.com/apache/cordova-plugin-inappbrowser" />
   <gap:plugin name="cordova-plugin-network-information" source="npm"/>
   <gap:plugin name="cordova-plugin-splashscreen" source="npm"/>
   <gap:plugin name="cordova-plugin-statusbar" source="npm"/>
@@ -153,23 +146,23 @@
   <gap:plugin name="cordova-plugin-crop" source="npm"/>
   <!--<preference name="android-build-tool" value="gradle" />-->
   <gap:plugin name="phonegap-plugin-push" source="npm" spec="2.1.2">
-    <param name="SENDER_ID" value="1012473507211"/>
+      <param name="SENDER_ID" value="1093495841319" />
   </gap:plugin>
 
   <platform name="android">
-    <resource-file src="google-services.json" target="/app/google-services.json"/>
+      <resource-file src="google-services.json" target="/app/google-services.json" />
   </platform>
 
-  <gap:plugin name="cordova-plugin-ionic-keyboard" source="npm" spec="2.0.5"/>
+  <gap:plugin name="cordova-plugin-ionic-keyboard" source="npm"/>
   <gap:plugin name="cordova-sqlite-evcore-extbuild-free" source="npm"/>
   <gap:plugin name="cordova-plugin-actionsheet" source="npm"/>
   <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" spec="5.4.1"/>
   <gap:plugin name="cordova-plugin-app-launcher" source="npm"/>
   <gap:plugin name="cordova-plugin-appavailability" source="npm"/>
   <gap:plugin name="cordova-plugin-phonedialer" source="npm"/>
-  <gap:plugin name="phonegap-plugin-barcodescanner" source="npm"/>
+  <gap:plugin name="cordova-plugin-calendar" source="npm"/>
+  <gap:plugin name="cordova-plugin-background-mode" source="npm"/>
   <plugin spec="https://github.com/ti8m/DocumentHandler.git" source="git"/>
-  <plugin name="cordova-plugin-calendar" source="npm"/>
   <plugin name="cordova-plugin-media-capture" source="npm" spec="1.4.1">
     <variable name="CAMERA_USAGE_DESCRIPTION" value="Need camera access to add pictures in Connect post"/>
     <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="Need Photo library access to add pictures in Connect post"/>
@@ -189,30 +182,30 @@
     <edit-config file="*-Info.plist" target="UIViewControllerBasedStatusBarAppearance" mode="merge">
       <false/>
     </edit-config>
-    <edit-config file="*-Info.plist" mode="merge" target="UIBackgroundModes">
-      <array>
-        <string>remote-notification</string>
-      </array>
-    </edit-config>
-    <edit-config target="NSCalendarsUsageDescription" file="*-Info.plist" mode="merge">
-      <string>This app uses your calendar.</string>
-    </edit-config>
-    <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
-      <string>This app uses your location for maps.</string>
-    </edit-config>
-
-    <edit-config target="NSLocationAlwaysUsageDescription" file="*-Info.plist" mode="merge">
-      <string>This app uses your location for maps.</string>
-    </edit-config>
   </platform>
+
+  <edit-config target="NSLocationWhenInUseUsageDescription" file="*-Info.plist" mode="merge">
+    <string>This app uses your location for maps.</string>
+  </edit-config>
+
+  <edit-config target="NSLocationAlwaysUsageDescription" file="*-Info.plist" mode="merge">
+    <string>This app uses your location for maps.</string>
+  </edit-config>
 
   <platform name="android">
     <uses-permission name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
-    <uses-permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission name="android.permission.READ_EXTERNAL_STORAGE"/>
   </platform>
+
+  <edit-config file="*-Info.plist" mode="overwrite" target="UIBackgroundModes">
+    <array>
+      <string>remote-notification</string>
+    </array>
+  </edit-config>
+  <edit-config target="NSCalendarsUsageDescription" file="*-Info.plist" mode="merge">
+    <string>This app uses your calendar.</string>
+  </edit-config>
 
   <hook src="assets/js/ios_fix_audio_background.js" type="after_platform_add"/>
   <hook src="assets/js/ios_fix_audio_background.js" type="before_run"/>
@@ -220,3 +213,4 @@
 
   <!--<gap:config-file platform="ios" parent="UIBackgroundModes" mode="overwrite"> <array> <string>audio</string> </array> </gap:config-file>-->
 </widget>
+
