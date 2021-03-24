@@ -748,8 +748,8 @@ angular.module('MobileServices', []).factory('unifyedglobal', ['$http', '$rootSc
           });
         }, 1200);
     }
-        $(".dockIconLink .dockIconImage").children('.dock-menu-icon').css('opacity', 0.6);
-        $(".dockIconLink .dockIconLabel").css('opacity', 0.6);
+        $(".dockIconLink .dockIconImage").children('.dock-menu-icon').css('opacity', 1);
+        $(".dockIconLink .dockIconLabel").css('opacity', 1);
         if ($rootScope.dockApplets) {
             for (var i = 0; i < $rootScope.dockApplets.length; i++) {
                 if (('/app/' + next.pathParams.appid + '/' + next.pathParams.pageid == $rootScope.dockApplets[i].url)) {
