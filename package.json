@@ -6,7 +6,7 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "bower": "^1.8.8"
+    "bower": "^1.8.14"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
